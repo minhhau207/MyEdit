@@ -1,0 +1,451 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("One Punch Fighters", "DarkTheme")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("AutoFarm")
+Section:NewToggle("AutoPunch",  "AutoPunch", function(state)
+    if state then
+        getgenv().Acctack = true
+while Acctack do
+wait(0.1) -- if your ping is dying put some delay here
+local args = {
+    [1] = "Normal"
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.ClickEvent:FireServer(unpack(args))
+end
+    else
+        getgenv().Acctack = tru
+while Acctack do
+wait(0.1) -- if your ping is dying put some delay here
+local args = {
+    [1] = "Normal"
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.ClickEvent:FireServer(unpack(args))
+end
+    end
+end)
+local Section = Tab:NewSection("AutoKill")
+Section:NewToggle("World 1", "Walk Monster to do DMG", function(state)
+    if state then
+        getgenv().W1 = true
+while W1 do
+wait(0.01) -- if your ping is dying put some delay here
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1a")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1b")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1c")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1d")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1e")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1f")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1g")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1h")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1i")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1j")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+end
+    else
+        getgenv().W1 = tru
+while W1 do
+wait(0.01) -- if your ping is dying put some delay here
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1a")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1b")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1c")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1d")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1e")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1f")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1g")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1h")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1i")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area1:FindFirstChild("1_1j")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+end
+    end
+end)
+Section:NewToggle("World 2", "Walk Monster to do DMG", function(state)
+    if state then
+        getgenv().W2 = true
+while W2 do
+wait(0.01) -- if your ping is dying put some delay here
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_a")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_b")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_c")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_d")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_e")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_f")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_g")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_h")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_i")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_j")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+end
+    else
+        getgenv().W2 = truw
+while infcubits do
+wait(0.01) -- if your ping is dying put some delay here
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_a")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_b")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_c")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_d")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_e")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_f")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_g")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_h")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_i")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area2:FindFirstChild("2_j")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+end
+    end
+end)
+Section:NewToggle("World 3", "Walk Monster to do DMG", function(state)
+    if state then
+        getgenv().W3 = true
+while W3 do
+wait(0.01) -- if your ping is dying put some delay here
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_1a")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_1b")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_2a")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_2b")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_3a")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_3b")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_3c")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+end
+    else
+        getgenv().W3 = tru
+while W3 do
+wait(0.01) -- if your ping is dying put some delay here
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_1a")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_1b")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_2a")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_2b")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_3a")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_3b")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Attack",
+    [2] = workspace.__GAME.__Mobs.Area3:FindFirstChild("3_3c")
+}
+
+game:GetService("ReplicatedStorage").Game.__Remotes.AttackEvent:FireServer(unpack(args))
+
+end
+    end
+end)
