@@ -23,6 +23,7 @@ end
 end
 end
 end)
+
 local Toggle = Section:CreateToggle('Auto Deposit', false, Color3.fromRGB(155, 255, 130), 0.25, function(BB)
 B = BB
 while B do task.wait(1)
@@ -83,31 +84,31 @@ if v.Name == "ObbyCheckpoint1" then
 HRP.CFrame = v.CFrame
 end
 end
-wait(1)
+wait(.7)
 for i,v in pairs(game:GetService("Workspace").ObbyCheckpoints:GetDescendants()) do
 if v.Name == "ObbyCheckpoint2" then
 HRP.CFrame = v.CFrame
 end
 end
-wait(1)
+wait(.7)
 for i,v in pairs(game:GetService("Workspace").ObbyCheckpoints:GetDescendants()) do
 if v.Name == "ObbyCheckpoint3" then
 HRP.CFrame = v.CFrame
 end
 end
-wait(1)
+wait(.7)
 for i,v in pairs(game:GetService("Workspace").ObbyCheckpoints:GetDescendants()) do
 if v.Name == "ObbyCheckpoint4" then
 HRP.CFrame = v.CFrame
 end
 end
-wait(1)
+wait(.7)
 for i,v in pairs(game:GetService("Workspace").ObbyCheckpoints:GetDescendants()) do
 if v.Name == "ObbyCheckpoint5" then
 HRP.CFrame = v.CFrame
 end
 end
-wait(1)
+wait(.7)
 for i,v in pairs(game:GetService("Workspace").ObbyButton:GetDescendants()) do
 if v.Name == "Button" then
 HRP.CFrame = v.CFrame * CFrame.Angles(0, 0, math.rad(90)) * CFrame.new(3,4,-2)
