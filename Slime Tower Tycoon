@@ -1,0 +1,146 @@
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua'))()
+local Window = Library:CreateWindow('Smell😂', 'Slime Tower Tycoon', 'ก็มาดิค้าบบบ', 'rbxassetid://10618928818', false, 'VisualUIConfigs', 'Synapse X')
+local Tab = Window:CreateTab('Main', true, 'rbxassetid://3926305904', Vector2.new(524, 44), Vector2.new(36, 36))
+local Section = Tab:CreateSection('All Func')
+local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+-- vvvvvv pls change this
+local Plot = game:GetService("Workspace").Plots["1"] -- I have no working braincell
+-- ^^^^^^ pls change this
+spawn(function()
+while true do
+game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.Quote,false,game)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,Enum.KeyCode.Quote,false,game)
+wait(10)
+end
+end)
+local Toggle = Section:CreateToggle('Auto Collect', false, Color3.fromRGB(155, 255, 130), 0.25, function(AA)
+A = AA
+while A do task.wait(1)
+for i,v in pairs(game:GetService("Workspace").Drops:GetDescendants()) do
+if v.Name == "Dropper_Drop" then
+v.CFrame = HRP.CFrame
+end
+end
+end
+end)
+local Toggle = Section:CreateToggle('Auto Collect V.2(Tween)', false, Color3.fromRGB(155, 255, 130), 0.25, function(MM)
+M = MM
+while M do task.wait(1)
+
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),
+{CFrame = CFrame.new(-457.980713, 15.3226748, 256.908234, 0.526102781, -4.30940483e-09, -0.850421011, 7.83812482e-09, 1, -2.18415952e-10, 0.850421011, -6.55079635e-09, 0.526102781)}):Play()
+wait (1)
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),
+{CFrame = CFrame.new(-459.033539, 15.3226776, 271.41098, -0.995827615, -4.00049938e-10, -0.0912541077, 1.50347823e-09, 1, -2.07908997e-08, 0.0912541077, -2.08413518e-08, -0.995827615)}):Play()
+wait (1)
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),
+{CFrame = CFrame.new( -464.399384, 15.3226776, 259.412537, 0.54066509, -2.43019684e-08, 0.841237962, 1.0315815e-07, 1, -3.74115814e-08, -0.841237962, 1.07007686e-07, 0.54066509 )}):Play()
+wait (1)
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),
+{CFrame = CFrame.new( -464.800262, 15.3226757, 272.643738, -0.996215105, 4.2425885e-09, 0.0869223624, 3.16291926e-09, 1, -1.25587984e-08, -0.0869223624, -1.22363364e-08, -0.996215105 )}):Play()
+
+
+end
+end)
+local Toggle = Section:CreateToggle('Auto Deposit', false, Color3.fromRGB(155, 255, 130), 0.25, function(BB)
+B = BB
+while B do task.wait(1)
+
+game:GetService("ReplicatedStorage").GTycoonClient.Remotes.DepositDrops:FireServer()
+
+end
+end)
+local Toggle = Section:CreateToggle('Auto Slime +1', false, Color3.fromRGB(155, 255, 130), 0.25, function(CC)
+C = CC
+while C do task.wait(1)
+local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage").GTycoonClient.Remotes.BuyDropper:FireServer(unpack(args))
+
+end
+end)
+local Toggle = Section:CreateToggle('Auto Slime +5', false, Color3.fromRGB(155, 255, 130), 0.25, function(DD)
+D = DD
+while D do task.wait(1)
+
+local args = {
+    [1] = 5
+}
+
+game:GetService("ReplicatedStorage").GTycoonClient.Remotes.BuyDropper:FireServer(unpack(args))
+
+end
+end)
+local Toggle = Section:CreateToggle('Auto Rate sell', false, Color3.fromRGB(155, 255, 130), 0.25, function(EE)
+E = EE
+while E do task.wait(1)
+
+local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage").GTycoonClient.Remotes.BuySpeed:FireServer(unpack(args))
+
+
+end
+end)
+local Toggle = Section:CreateToggle('Auto Merge', false, Color3.fromRGB(155, 255, 130), 0.25, function(FF)
+F = FF
+while F do task.wait(1)
+
+game:GetService("ReplicatedStorage").GTycoonClient.Remotes.MergeDroppers:FireServer()
+
+end
+end)
+local Toggle = Section:CreateToggle('Auto Obby', false, Color3.fromRGB(155, 255, 130), 0.25, function(GG)
+G = GG
+while G do task.wait(1)
+for i,v in pairs(game:GetService("Workspace").ObbyCheckpoints:GetDescendants()) do
+if v.Name == "ObbyCheckpoint1" then
+HRP.CFrame = v.CFrame
+end
+end
+wait(1)
+for i,v in pairs(game:GetService("Workspace").ObbyCheckpoints:GetDescendants()) do
+if v.Name == "ObbyCheckpoint2" then
+HRP.CFrame = v.CFrame
+end
+end
+wait(1)
+for i,v in pairs(game:GetService("Workspace").ObbyCheckpoints:GetDescendants()) do
+if v.Name == "ObbyCheckpoint3" then
+HRP.CFrame = v.CFrame
+end
+end
+wait(1)
+for i,v in pairs(game:GetService("Workspace").ObbyCheckpoints:GetDescendants()) do
+if v.Name == "ObbyCheckpoint4" then
+HRP.CFrame = v.CFrame
+end
+end
+wait(1)
+for i,v in pairs(game:GetService("Workspace").ObbyCheckpoints:GetDescendants()) do
+if v.Name == "ObbyCheckpoint5" then
+HRP.CFrame = v.CFrame
+end
+end
+wait(1)
+for i,v in pairs(game:GetService("Workspace").ObbyButton:GetDescendants()) do
+if v.Name == "Button" then
+HRP.CFrame = v.CFrame * CFrame.Angles(0, 0, math.rad(90)) * CFrame.new(3,4,-2)
+end
+end
+end
+end)
+local Slider = Section:CreateSlider('Walkspeed', 16, 200, 16, Color3.fromRGB(155, 255, 130), function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+end)
+local ToggleKeybind = Section:CreateKeybind('Toggle UI', 'E', function()
+Library:ToggleUI()
+end)
