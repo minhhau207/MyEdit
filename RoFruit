@@ -1,0 +1,278 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("🔥🌌 Ro Fruit", "DarkTheme")
+local Tab = Window:NewTab("🌾Farm")
+------------------------------------------------------------------------------------------------
+local Section = Tab:NewSection("AutoAttack")
+Section:NewToggle("👊Melee", "ToggleInfo", function(state)
+    if state then
+_G.Combat = true
+while _G.Combat do wait()
+pcall(function()
+game:GetService("ReplicatedStorage").Combat.Combat:FireServer()
+    end)
+end
+else
+_G.Combat = false
+while _G.Combat do wait()
+pcall(function()
+game:GetService("ReplicatedStorage").Combat.Combat:FireServer()
+            end)
+        end
+    end
+end)
+Section:NewToggle("⚔Sword", "ToggleInfo", function(state)
+    if state then
+_G.Sword = true
+while _G.Sword do wait()
+pcall(function()
+
+game:GetService("ReplicatedStorage").Document._Sword.Shusui.Combat:FireServer()
+
+    end)
+end
+else
+_G.Sword = false
+while _G.Sword do wait()
+pcall(function()
+    
+game:GetService("ReplicatedStorage").Document._Sword.Shusui.Combat:FireServer()
+
+            end)
+        end
+    end
+end)
+
+------------------------------------------------------------------------------------------------
+local Section = Tab:NewSection("MOB")
+Section:NewButton("Farm Thor", "", function(v)
+    _G.Tore = true
+while _G.Tore do wait()
+pcall(function()
+local TweenService = game:GetService("TweenService")
+local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),
+{CFrame = CFrame.new( 990.962097, 360.457123, 511.901825, 0.707134247, 0, 0.707079291, 0, 1, 0, -0.707079291, 0, 0.707134247 )}):Play()
+    end)
+end
+end)
+
+Section:NewButton("KillAura", "ทำให้ม้อนไม่เดิน", function(v)
+spawn(function()
+	while wait(.1) do
+		pcall(function()
+			for i,v in pairs(game:GetService("Workspace").Mob:GetDescendants()) do
+				if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+					repeat wait(.1)
+						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+						v.Humanoid.Health = 0
+						v.HumanoidRootPart.CanCollide = false
+						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Transparency = 0.5
+					until not Auto_Raid or not v.Parent or v.Humanoid.Health <= 0
+				end
+			end
+		end)
+	end
+end)
+end)
+------------------------------------------------------------------------------------------------
+local Tab = Window:NewTab("☠AutoStat")
+local Section = Tab:NewSection("Stat⬇")
+Section:NewToggle("👊Melee", "ToggleInfo", function(state)
+    if state then
+_G.S1 = true
+while _G.S1 do wait()
+pcall(function()
+local args = {
+    [1] = "Melee",
+    [2] = "Up",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remote.Stats:FireServer(unpack(args))
+
+    end)
+end
+
+    else
+_G.S1 = false
+while _G.S1 do wait()
+pcall(function()
+
+local args = {
+    [1] = "Melee",
+    [2] = "Up",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remote.Stats:FireServer(unpack(args))
+        end)
+    end
+end
+end)
+Section:NewToggle("🛡Defense", "ToggleInfo", function(state)
+    if state then
+_G.S2 = true
+while _G.S2 do wait()
+pcall(function()
+
+local args = {
+    [1] = "Defense",
+    [2] = "Up",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remote.Stats:FireServer(unpack(args))
+
+    end)
+end
+
+    else
+_G.S2 = false
+while _G.S2 do wait()
+pcall(function()
+
+local args = {
+    [1] = "Defense",
+    [2] = "Up",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remote.Stats:FireServer(unpack(args))
+        end)
+    end
+end
+end)
+Section:NewToggle("⚔Sword", "ToggleInfo", function(state)
+    if state then
+_G.S3 = true
+while _G.S3 do wait()
+pcall(function()
+
+local args = {
+    [1] = "Sword",
+    [2] = "Up",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remote.Stats:FireServer(unpack(args))
+
+    end)
+end
+
+    else
+_G.S3 = false
+while _G.S3 do wait()
+pcall(function()
+
+local args = {
+    [1] = "Sword",
+    [2] = "Up",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remote.Stats:FireServer(unpack(args))
+        end)
+    end
+end
+end)
+Section:NewToggle("🍈DevilFruit", "ToggleInfo", function(state)
+    if state then
+_G.S4 = true
+while _G.S4 do wait()
+pcall(function()
+
+local args = {
+    [1] = "DevilFruit",
+    [2] = "Up",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remote.Stats:FireServer(unpack(args))
+
+    end)
+end
+
+    else
+_G.S4 = false
+while _G.S4 do wait()
+pcall(function()
+
+local args = {
+    [1] = "DevilFruit",
+    [2] = "Up",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remote.Stats:FireServer(unpack(args))
+        end)
+    end
+end
+end)
+local Tab = Window:NewTab("🖥UI")
+local Section = Tab:NewSection("Shop")
+Section:NewToggle("Haki", "ToggleInfo", function(state)
+    if state then
+        game:GetService("Players").LocalPlayer.PlayerGui.HakiShop.Enabled = true
+    else
+        game:GetService("Players").LocalPlayer.PlayerGui.HakiShop.Enabled = false
+    end
+end)
+Section:NewToggle("Sword", "ToggleInfo", function(state)
+    if state then
+        game:GetService("Players").LocalPlayer.PlayerGui.KatanaShop.Enabled = true
+    else
+        game:GetService("Players").LocalPlayer.PlayerGui.KatanaShop.Enabled = false
+    end
+end)
+
+local Tab = Window:NewTab("👁Misc")
+local Section = Tab:NewSection("Movement")
+Section:NewSlider("Speed", "SliderInfo", 200, 0, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+Section:NewSlider("Jump", "SliderInfo", 200, 0, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local Tab = Window:NewTab("❗Code")
+local Section = Tab:NewSection("AllCode")
+Section:NewButton("AllCode", "ButtonInfo", function()
+    local args = {
+        [1] = "EXTRA"
+    }
+    
+    game:GetService("ReplicatedStorage").Code:FireServer(unpack(args))
+
+local args = {
+    [1] = "NEW"
+}
+
+game:GetService("ReplicatedStorage").Code:FireServer(unpack(args))
+
+local args = {
+    [1] = "SORRYBUGS"
+}
+
+game:GetService("ReplicatedStorage").Code:FireServer(unpack(args))
+
+local args = {
+    [1] = "DISCORD"
+}
+
+game:GetService("ReplicatedStorage").Code:FireServer(unpack(args))
+
+end)
+
+spawn(function()
+    while wait() do 
+        pcall(function()
+            if _G.Raids then
+                for i,v in pairs(game:GetService("Workspace").Mob:GetDescendants()) do
+                    if v.ClassName == "Model" and v.Humanoid.Health > 0 then
+                        v.Humanoid.Health = Die
+                    end
+                end
+            end
+        end)
+    end
+end)
