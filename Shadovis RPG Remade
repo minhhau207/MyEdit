@@ -465,12 +465,12 @@ section3:AddToggle({
 })
 
 section3:AddToggle({
-    Name = "Ascendant Helmet Godmode",
+    Name = "Spam EmpyreusJudgement Blade ***if you have builds you op***",
     Value = false, 
     Flag = "Ascendant", 
     Callback = function(state) lk = state 
         while lk do 
-            game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "Heavy KnightForgotten Knight Amulet", math.random, "Evade")
+game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "EmpyreusJudgement Blade", "10", "Cast")
             task.wait(.1)
         end 
     end 
