@@ -958,6 +958,7 @@ mainsec1:AddToggle({
     Flag = "AJR", 
     Callback = function(state) ut = state 
         while ut do 
+            wait (20)
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Banland")
                 task.wait(120)
@@ -986,6 +987,7 @@ mainsec3:AddToggle({
     Flag = "HAL", 
     Callback = function(state) HL = state 
         while HL do 
+            wait (20)
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Halloween")
             end
