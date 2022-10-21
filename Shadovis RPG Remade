@@ -229,12 +229,16 @@ local main2 = window:CreateTab({
     Name = "🟢 Raid"
 })
 
-local main3 = window:CreateTab({
-    Name = "🟢 Hallow Raid"
+local main4 = window:CreateTab({
+    Name = "🟢 Spam"
 })
 
 local mainsec1 = main2:CreateSection({
     Name = "Stuff"
+})
+
+local Spam1 = main4:CreateSection({
+    Name = "Skill"
 })
 
 local mainsec3 = main3:CreateSection({
@@ -288,6 +292,58 @@ local persistence = section6:AddPersistence({
 
 local fsection1 = main1:CreateSection({
     Name = "Level Stuff"
+})
+
+Spam1:AddToggle({
+    Name = "Spam EmpyreusJudgement Blade ***if you have builds you op***",
+    Value = false, 
+    Flag = "Ascendant", 
+    Callback = function(state) lk = state 
+        while lk do 
+game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "EmpyreusJudgement Blade", "10", "Cast")
+            task.wait(KO)
+        end 
+    end 
+})
+
+Spam1:AddSlider({
+    Name = "EmpyreusJudgement Blade",
+    Value = .5,
+    Min = .1, 
+    Max = 1, 
+    Flag = "EA", 
+    Callback = function(value) 
+        KO = value 
+    end 
+})
+
+Spam1:AddToggle({
+    Name = "Spam KronosChronobonum", 
+    Value = false, 
+    Flag = "IO", 
+    Callback = function(state) k = state
+        while k do 
+local args = {
+    [1] = "Input",
+    [2] = "KronosChronobonum",
+    [3] = 9,
+    [4] = "Horns"
+}
+game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer(unpack(args))
+            task.wait(OW)
+        end 
+    end 
+})
+
+Spam1:AddSlider({
+    Name = "KronosChronobonum",
+    Value = .5,
+    Min = .1, 
+    Max = 1, 
+    Flag = "MV", 
+    Callback = function(value) 
+        OW = value 
+    end 
 })
 
 section1:AddToggle({
@@ -453,58 +509,6 @@ section3:AddToggle({
 })
 
 section3:AddToggle({
-    Name = "Spam EmpyreusJudgement Blade ***if you have builds you op***",
-    Value = false, 
-    Flag = "Ascendant", 
-    Callback = function(state) lk = state 
-        while lk do 
-game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "EmpyreusJudgement Blade", "10", "Cast")
-            task.wait(KO)
-        end 
-    end 
-})
-
-section3:AddSlider({
-    Name = "EmpyreusJudgement Blade",
-    Value = .5,
-    Min = .1, 
-    Max = 1, 
-    Flag = "EA", 
-    Callback = function(value) 
-        KO = value 
-    end 
-})
-
-section3:AddToggle({
-    Name = "Spam KronosChronobonum", 
-    Value = false, 
-    Flag = "IO", 
-    Callback = function(state) k = state
-        while k do 
-local args = {
-    [1] = "Input",
-    [2] = "KronosChronobonum",
-    [3] = 9,
-    [4] = "Horns"
-}
-game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer(unpack(args))
-            task.wait(OW)
-        end 
-    end 
-})
-
-section3:AddSlider({
-    Name = "KronosChronobonum",
-    Value = .5,
-    Min = .1, 
-    Max = 1, 
-    Flag = "MV", 
-    Callback = function(value) 
-        OW = value 
-    end 
-})
-
-section3:AddToggle({
     Name = "Block Godmode", 
     Value = false, 
     Flag = "BGM", 
@@ -525,16 +529,6 @@ section3:AddToggle({
     end 
 })
 
-
-section3:AddDropdown({
-    Name = "Select Ozymandias(s)", 
-    Multi = true, 
-    List = {"Crimson", "Cerulean", "Wicked"}, 
-    Flag = "SO",
-    Callback = function(selected)
-        l = selected 
-    end 
-})
 
 section3:AddButton({
     Name = "Open Selected Shop",
@@ -977,20 +971,6 @@ mainsec1:AddToggle({
 })
 
 mainsec1:AddToggle({
-    Name = "Auto Farm Banland Raid", 
-    Value = false, 
-    Flag = "AFR", 
-    Callback = function(state) it = state 
-        while it do 
-            if getclosestmob() ~= nil then 
-                hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
-            end 
-            task.wait()    
-        end 
-    end 
-})
-
-mainsec3:AddToggle({
     Name = "Auto Join Hallow Raid", 
     Value = false, 
     Flag = "HAL", 
@@ -1005,12 +985,12 @@ mainsec3:AddToggle({
     end 
 })
 
-mainsec3:AddToggle({
-    Name = "Auto Farm Hallow Raid", 
+mainsec1:AddToggle({
+    Name = "Auto TP to mob", 
     Value = false, 
-    Flag = "HLA", 
-    Callback = function(state) LH = state 
-        while LH do 
+    Flag = "AFR", 
+    Callback = function(state) it = state 
+        while it do 
             if getclosestmob() ~= nil then 
                 hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
             end 
@@ -1018,7 +998,6 @@ mainsec3:AddToggle({
         end 
     end 
 })
-
 
 mainsec1:AddToggle({
     Name = "Auto Equip Weapon (Skill)", 
