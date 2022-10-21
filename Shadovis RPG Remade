@@ -967,7 +967,7 @@ mainsec1:AddToggle({
 })
 
 mainsec1:AddToggle({
-    Name = "Banland Raid", 
+    Name = "Auto Farm Banland Raid", 
     Value = false, 
     Flag = "AFR", 
     Callback = function(state) it = state 
