@@ -963,6 +963,7 @@ mainsec1:AddToggle({
             if getclosestmob() ~= nil then 
                 hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
             end 
+            wait (60)
             if plr.PlayerGui.Interface:FindFirstChild("TextLabel") then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Banland")
                 task.wait(120)
@@ -995,6 +996,7 @@ mainsec3:AddToggle({
             if getclosestmob() ~= nil then 
                 hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
             end 
+            wait (60)
             if plr.PlayerGui.Interface:FindFirstChild("TextLabel") then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Halloween")
                 task.wait(120)
