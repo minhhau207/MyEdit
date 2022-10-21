@@ -453,26 +453,54 @@ section3:AddToggle({
 })
 
 section3:AddToggle({
-    Name = "Knight Amulet Godmode", 
-    Value = false, 
-    Flag = "GODMODEKNIGHT", 
-    Callback = function(state) aa = state 
-        while aa do 
-            game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "Heavy KnightForgotten Knight Amulet", math.random, "Evade")
-            task.wait(.1)
-        end 
-    end 
-})
-
-section3:AddToggle({
     Name = "Spam EmpyreusJudgement Blade ***if you have builds you op***",
     Value = false, 
     Flag = "Ascendant", 
     Callback = function(state) lk = state 
         while lk do 
 game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "EmpyreusJudgement Blade", "10", "Cast")
-            task.wait(.6)
+            task.wait(KO)
         end 
+    end 
+})
+
+section3:AddSlider({
+    Name = "EmpyreusJudgement Blade",
+    Value = .5,
+    Min = .1, 
+    Max = 1, 
+    Flag = "EA", 
+    Callback = function(value) 
+        KO = value 
+    end 
+})
+
+section3:AddToggle({
+    Name = "Spam KronosChronobonum", 
+    Value = false, 
+    Flag = "IO", 
+    Callback = function(state) k = state
+        while k do 
+local args = {
+    [1] = "Input",
+    [2] = "KronosChronobonum",
+    [3] = 9,
+    [4] = "Horns"
+}
+game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer(unpack(args))
+            task.wait(OW)
+        end 
+    end 
+})
+
+section3:AddSlider({
+    Name = "KronosChronobonum",
+    Value = .5,
+    Min = .1, 
+    Max = 1, 
+    Flag = "MV", 
+    Callback = function(value) 
+        OW = value 
     end 
 })
 
@@ -497,25 +525,6 @@ section3:AddToggle({
     end 
 })
 
-section3:AddToggle({
-    Name = "Infinite Ozymandias", 
-    Value = false, 
-    Flag = "IO", 
-    Callback = function(state) k = state
-        while k do 
-            if table.find((l or {}), "Cerulean") then 
-                cha.Combat.RemoteEvent:FireServer("Input", "OzymandiasCerulean Ozymandias", math.random, "Excel")
-            end 
-            if table.find((l or {}), "Crimson") then 
-                cha.Combat.RemoteEvent:FireServer("Input", "OzymandiasCrimson Ozymandias", math.random, "Excel")
-            end 
-            if table.find((l or {}), "Wicked") then 
-                cha.Combat.RemoteEvent:FireServer("Input", "OzymandiasWicked Ozymandias", math.random, "Excel")
-            end 
-            task.wait(.7)
-        end 
-    end 
-})
 
 section3:AddDropdown({
     Name = "Select Ozymandias(s)", 
