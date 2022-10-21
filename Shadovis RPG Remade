@@ -386,7 +386,7 @@ section2:AddSlider({
 section2:AddSlider({
     Name = "Kill Aura Speed", 
     Value = 0.1,
-    Min = 0.05, 
+    Min = 0, 
     Max = 1, 
     Precise = 1, 
     Flag = "KAS", 
