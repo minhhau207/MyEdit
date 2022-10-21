@@ -386,7 +386,7 @@ section2:AddSlider({
 section2:AddSlider({
     Name = "Kill Aura Speed", 
     Value = 0.1,
-    Min = 0, 
+    Min = 0.1, 
     Max = 1, 
     Precise = 1, 
     Flag = "KAS", 
@@ -958,9 +958,9 @@ mainsec1:AddToggle({
     Flag = "AJR", 
     Callback = function(state) ut = state 
         while ut do 
-            task.wait(120)
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Banland")
+                task.wait(120)
             end
         end 
     end 
@@ -986,10 +986,10 @@ mainsec3:AddToggle({
     Flag = "HAL", 
     Callback = function(state) HL = state 
         while HL do 
-            task.wait(120)
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Halloween")
             end
+            task.wait(120)
         end 
     end 
 })
