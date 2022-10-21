@@ -886,10 +886,9 @@ mainsec2:AddToggle({
     Flag = "AJR", 
     Callback = function(state) ut = state 
         while ut do 
-            wait (20)
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Banland")
-                task.wait(120)
+                task.wait(15)
             end
         end 
     end 
@@ -900,12 +899,11 @@ mainsec2:AddToggle({
     Value = false, 
     Flag = "HAL", 
     Callback = function(state) HL = state 
-        while HL do 
-            wait (20)
-            if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
+        while HL do
+                if (not game:GetService("Players")["LocalPlayer"].PlayerGui.Interface:FindFirstChild("WaveProgression")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Halloween")
+                task.wait(15)
             end
-            task.wait(120)
         end 
     end 
 })
@@ -930,7 +928,7 @@ Spam1:AddToggle({
     Flag = "Ascendant", 
     Callback = function(state) lk = state 
         while lk do 
-game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "EmpyreusJudgement Blade", "10", "Cast")
+            game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "EmpyreusJudgement Blade", "10", "Cast")
             task.wait(KO)
         end 
     end 
