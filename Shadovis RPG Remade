@@ -907,10 +907,10 @@ mainsec2:AddToggle({
     Value = false, 
     Flag = "AJR", 
     Callback = function(state) ut = state 
-        while ut do 
+        while ut do wait (5)
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Banland")
-                task.wait(15)
+                task.wait(25)
             end
         end 
     end 
@@ -921,10 +921,10 @@ mainsec2:AddToggle({
     Value = false, 
     Flag = "HAL", 
     Callback = function(state) HL = state 
-        while HL do 
+        while HL do wait (5)
                 if (not game:GetService("Players")["LocalPlayer"].PlayerGui.Interface:FindFirstChild("WaveProgression")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Halloween")
-                task.wait(15)
+                task.wait(25)
             end
         end 
     end 
@@ -935,10 +935,10 @@ mainsec2:AddToggle({
     Value = false, 
     Flag = "YVX", 
     Callback = function(state) YV = state 
-        while YV do
+        while YV do wait (5)
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Yvxos")   
-                task.wait(15)
+                task.wait(25)
             end
         end 
     end 
@@ -981,7 +981,7 @@ mainsec4:AddToggle({
     Value = false, 
     Flag = "SKI", 
     Callback = function(state) SK = state 
-        while SK do wait (1)
+        while SK do wait ("1")
             local args = {[1] = "Stay"}
             game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
         end 
