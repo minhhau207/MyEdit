@@ -278,6 +278,10 @@ local mainsec2 = main2:CreateSection({
     Name = "Main"
 })
 
+local mainsec3 = main2:CreateSection({
+    Name = "TP to Mob"
+})
+
 local Spam1 = main3:CreateSection({
     Name = "Skill"
 })
@@ -333,6 +337,20 @@ section1:AddSearchBox({
     Callback = function(selected) 
         b = selected  
     end
+})
+
+section1:AddToggle({
+    Name = "Auto TP to mob", 
+    Value = false, 
+    Flag = "PRO", 
+    Callback = function(state) ME = state 
+        while ME do 
+                if getclosestmob() ~= nil then 
+                    hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+                end 
+            task.wait()    
+        end 
+    end 
 })
 
 section1:AddDropdown({
@@ -922,13 +940,29 @@ mainsec2:AddToggle({
     end 
 })
 
-mainsec2:AddToggle({
+mainsec3:AddToggle({
     Name = "Auto TP to mob (Hallow)", 
     Value = false, 
-    Flag = "AFR", 
-    Callback = function(state) it = state 
+    Flag = "TMT", 
+    Callback = function(state) TL = state 
         if (game:GetService("Players")["LocalPlayer"].PlayerGui.Interface:FindFirstChild("WaveProgression")) then
-            while it do 
+            while TL do 
+                    if getclosestmob() ~= nil then 
+                        hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+                    end 
+                task.wait()    
+            end 
+        end 
+    end
+})
+
+mainsec3:AddToggle({
+    Name = "Auto TP to mob (Yvxos and Banland)", 
+    Value = false, 
+    Flag = "TPP", 
+    Callback = function(state) OM = state 
+        if (game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
+            while OM do 
                     if getclosestmob() ~= nil then 
                         hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
                     end 
