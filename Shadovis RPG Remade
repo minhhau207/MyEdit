@@ -348,7 +348,7 @@ section1:AddToggle({
                 if getclosestmob() ~= nil then 
                     hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
                 end 
-            task.wait()    
+            task.wait(.1)    
         end 
     end 
 })
@@ -950,7 +950,7 @@ mainsec3:AddToggle({
                     if getclosestmob() ~= nil then 
                         hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
                     end 
-                task.wait()    
+                task.wait(.1)    
             end 
         end 
     end
@@ -966,7 +966,7 @@ mainsec3:AddToggle({
                     if getclosestmob() ~= nil then 
                         hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
                     end 
-                task.wait()    
+                task.wait(.1)    
             end 
         end 
     end
