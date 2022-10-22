@@ -923,7 +923,7 @@ mainsec2:AddToggle({
 })
 
 mainsec2:AddToggle({
-    Name = "Auto TP to mob (HallowWeen) ", 
+    Name = "Auto TP to mob (HallowWeen)", 
     Value = false, 
     Flag = "AFR", 
     Callback = function(state) it = state 
