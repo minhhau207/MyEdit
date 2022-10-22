@@ -981,7 +981,7 @@ mainsec4:AddToggle({
     Value = false, 
     Flag = "SKI", 
     Callback = function(state) SK = state 
-        while SK do wait ("1")
+        while SK do wait (1)
             local args = {[1] = "Stay"}
             game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
         end 
