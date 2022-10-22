@@ -923,12 +923,12 @@ mainsec2:AddToggle({
 })
 
 mainsec2:AddToggle({
-    Name = "Auto TP to mob", 
+    Name = "Auto TP to mob (HallowWeen) ", 
     Value = false, 
     Flag = "AFR", 
     Callback = function(state) it = state 
         while it do 
-            if (game:GetService("Workspace"):FindFirstChild("Cutscenes")) or (game:GetService("Players")["LocalPlayer"].PlayerGui.Interface:FindFirstChild("WaveProgression")) then
+            if (game:GetService("Players")["LocalPlayer"].PlayerGui.Interface:FindFirstChild("WaveProgression")) then
                 if getclosestmob() ~= nil then 
                     hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
                 end 
