@@ -916,7 +916,7 @@ mainsec2:AddToggle({
         while YV do
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Yvxos")   
-                task.wait(120)
+                task.wait(15)
             end
         end 
     end 
@@ -928,10 +928,12 @@ mainsec2:AddToggle({
     Flag = "AFR", 
     Callback = function(state) it = state 
         while it do 
-            if getclosestmob() ~= nil then 
-                hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
-            end 
+            if (game:GetService("Workspace"):FindFirstChild("Cutscenes")) or (game:GetService("Players")["LocalPlayer"].PlayerGui.Interface:FindFirstChild("WaveProgression")) then
+                if getclosestmob() ~= nil then 
+                    hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+                end 
             task.wait()    
+            end
         end 
     end 
 })
