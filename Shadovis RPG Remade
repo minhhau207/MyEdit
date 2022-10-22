@@ -28,6 +28,14 @@ if game:GetService("ReplicatedStorage"):WaitForChild("UnloadedEnemies") then
     end 
 end
 
+plr.OnTeleport:Connect(function(state)
+	if state == Enum.TeleportState.Started then
+		if queueteleport then
+			queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/Shadovis%20RPG%20Remade'))()")
+		end
+	end
+end)
+
 plr.CharacterAdded:Connect(function(character)
     cha = character 
     hrp = cha:WaitForChild("HumanoidRootPart")
@@ -204,9 +212,9 @@ for i,v in pairs(cha.Equipment:GetChildren()) do
 end 
 
 local window = lib:CreateWindow({
-    Name = "Novaz#5792",
+    Name = "DragonZ_TH#4793",
     Themeable = {
-        Info = {"Kalas A Skid", "Part Of Equip Thing By Kalas"},
+        Info = {"มีปัญหาอะไรติดต่อมาได้นะครับ"},
         Credit = false, 
         Background = "",
         Visible = true
@@ -214,15 +222,15 @@ local window = lib:CreateWindow({
 })
 
 local main1 = window:CreateTab({
-    Name = "Main"
+    Name = "🟢 Main"
 })
 
 local main2 = window:CreateTab({
-    Name = "Raid"
+    Name = "🟢 Raid"
 })
 
-local mainsec1 = main2:CreateSection({
-    Name = "Raid Stuff"
+local main3 = window:CreateTab({
+    Name = "🟢 Spam"
 })
 
 local section1 = main1:CreateSection({
@@ -264,6 +272,22 @@ local section7 = main1:CreateSection({
 
 local section8 = main1:CreateSection({
     Name = "Teleports"
+})
+
+local mainsec2 = main2:CreateSection({
+    Name = "Main"
+})
+
+local mainsec3 = main2:CreateSection({
+    Name = "TP to Mob"
+})
+
+local mainsec4 = main2:CreateSection({
+    Name = "Auto"
+})
+
+local Spam1 = main3:CreateSection({
+    Name = "Skill"
 })
 
 local persistence = section6:AddPersistence({
@@ -317,6 +341,20 @@ section1:AddSearchBox({
     Callback = function(selected) 
         b = selected  
     end
+})
+
+section1:AddToggle({
+    Name = "Auto TP to mob", 
+    Value = false, 
+    Flag = "PRO", 
+    Callback = function(state) ME = state 
+        while ME do 
+                if getclosestmob() ~= nil then 
+                    hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+                end 
+            task.wait()    
+        end 
+    end 
 })
 
 section1:AddDropdown({
@@ -437,18 +475,6 @@ section3:AddToggle({
 })
 
 section3:AddToggle({
-    Name = "Knight Amulet Godmode", 
-    Value = false, 
-    Flag = "GODMODEKNIGHT", 
-    Callback = function(state) aa = state 
-        while aa do 
-            game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "Heavy KnightForgotten Knight Amulet", math.random, "Evade")
-            task.wait(.1)
-        end 
-    end 
-})
-
-section3:AddToggle({
     Name = "Block Godmode", 
     Value = false, 
     Flag = "BGM", 
@@ -469,35 +495,6 @@ section3:AddToggle({
     end 
 })
 
-section3:AddToggle({
-    Name = "Infinite Ozymandias", 
-    Value = false, 
-    Flag = "IO", 
-    Callback = function(state) k = state
-        while k do 
-            if table.find((l or {}), "Cerulean") then 
-                cha.Combat.RemoteEvent:FireServer("Input", "OzymandiasCerulean Ozymandias", math.random, "Excel")
-            end 
-            if table.find((l or {}), "Crimson") then 
-                cha.Combat.RemoteEvent:FireServer("Input", "OzymandiasCrimson Ozymandias", math.random, "Excel")
-            end 
-            if table.find((l or {}), "Wicked") then 
-                cha.Combat.RemoteEvent:FireServer("Input", "OzymandiasWicked Ozymandias", math.random, "Excel")
-            end 
-            task.wait(.7)
-        end 
-    end 
-})
-
-section3:AddDropdown({
-    Name = "Select Ozymandias(s)", 
-    Multi = true, 
-    List = {"Crimson", "Cerulean", "Wicked"}, 
-    Flag = "SO",
-    Callback = function(selected)
-        l = selected 
-    end 
-})
 
 section3:AddButton({
     Name = "Open Selected Shop",
@@ -716,25 +713,6 @@ section7:AddButton({
     end 
 })
 
-section7:AddToggle({
-    Name = "Spam Hooked Remote", 
-    Value = false, 
-    Flag = "SHR", 
-    Keybind = {
-        Mode = "Toggle", 
-        Flag = "KEYBIND",
-        Callback = function(state) 
-            r = state 
-        end 
-    },
-    Callback = function(state) r = state
-        while r do 
-            cha.Combat.RemoteEvent:FireServer(table.unpack((kk or {})))
-            task.wait((z or .1))
-        end 
-    end 
-})
-
 section7:AddSlider({
     Name = "Spam Speed", 
     Value = .1, 
@@ -924,136 +902,141 @@ section8:AddDropdown({
     end 
 })
 
-mainsec1:AddToggle({
-    Name = "Auto Join Raid", 
+mainsec2:AddToggle({
+    Name = "Auto Join Banland Raid", 
     Value = false, 
     Flag = "AJR", 
     Callback = function(state) ut = state 
-        while ut do 
+        while ut do wait (5)
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Banland")
+                task.wait(25)
             end
-            task.wait(60)
         end 
     end 
 })
 
-mainsec1:AddToggle({
-    Name = "Auto Farm Raid", 
+mainsec2:AddToggle({
+    Name = "Auto Join Hallow Raid", 
     Value = false, 
-    Flag = "AFR", 
-    Callback = function(state) it = state 
-        while it do 
-            if getclosestmob() ~= nil then 
-                hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
-            end 
-            if plr.PlayerGui.Interface:FindFirstChild("TextLabel") then 
-                game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Banland")
-                task.wait(15)
-            end 
-            task.wait()    
+    Flag = "HAL", 
+    Callback = function(state) HL = state 
+        while HL do wait (5)
+                if (not game:GetService("Players")["LocalPlayer"].PlayerGui.Interface:FindFirstChild("WaveProgression")) then 
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Halloween")
+                task.wait(25)
+            end
         end 
     end 
 })
 
-mainsec1:AddToggle({
-    Name = "Auto Equip Weapon (Skill)", 
+mainsec2:AddToggle({
+    Name = "Auto Join Yvxos Raid", 
     Value = false, 
-    Flag = "AEWS", 
-    Callback = function(state) klg = state 
-        while klg do 
-            if table.find((ppmr or {}), "Holy Charm F") then 
-                for i,v in pairs(debug.getupvalues(senv.IncrementInventory)[2]["Inventory"]) do 
-                    if type(v) == "table" and v[1] == "Holy Charm" then 
-                        game:GetService("ReplicatedStorage").RemoteEvent:FireServer("ChangeEquipment", i)
-                        task.wait(6)
-                    end 
-                end 
-            end 
-            if table.find((ppmr or {}), "Aurelion Hood F") then 
-                for i,v in pairs(debug.getupvalues(senv.IncrementInventory)[2]["Inventory"]) do 
-                    if type(v) == "table" and v[1] == "Aurelion Hood" then 
-                        game:GetService("ReplicatedStorage").RemoteEvent:FireServer("ChangeEquipment", i)
-                        task.wait(6)
-                    end 
-                end 
-            end 
-            if table.find((ppmr or {}), "Judgement Blade R") then 
-                for i,v in pairs(debug.getupvalues(senv.IncrementInventory)[2]["Inventory"]) do 
-                    if type(v) == "table" and v[1] == "Judgement Blade" then 
-                        game:GetService("ReplicatedStorage").RemoteEvent:FireServer("ChangeEquipment", i)
-                        task.wait(6)
-                    end 
-                end 
-            end 
-            if table.find((ppmr or {}), "Aurelion Hood R") then 
-                for i,v in pairs(debug.getupvalues(senv.IncrementInventory)[2]["Inventory"]) do 
-                    if type(v) == "table" and v[1] == "Aurelion Hood" then 
-                        game:GetService("ReplicatedStorage").RemoteEvent:FireServer("ChangeEquipment", i)
-                        task.wait(6)
-                    end 
-                end 
-            end 
-            if table.find((ppmr or {}), "Inferno Charm F") then 
-                for i,v in pairs(debug.getupvalues(senv.IncrementInventory)[2]["Inventory"]) do 
-                    if type(v) == "table" and v[1] == "Inferno Charm" then 
-                        game:GetService("ReplicatedStorage").RemoteEvent:FireServer("ChangeEquipment", i)
-                        task.wait(6)
-                    end 
-                end 
-            end 
-            if table.find((ppmr or {}), "Solar Staff M1") then 
-                for i,v in pairs(debug.getupvalues(senv.IncrementInventory)[2]["Inventory"]) do 
-                    if type(v) == "table" and v[1] == "Solar Staff" then 
-                        game:GetService("ReplicatedStorage").RemoteEvent:FireServer("ChangeEquipment", i)
-                        task.wait(6)
-                    end 
-                end 
-            end 
-            if table.find((ppmr or {}), "Darkmatter Fists Smash") then 
-                for i,v in pairs(debug.getupvalues(senv.IncrementInventory)[2]["Inventory"]) do 
-                    if type(v) == "table" and v[1] == "Darkmatter Fists" then 
-                        game:GetService("ReplicatedStorage").RemoteEvent:FireServer("ChangeEquipment", i)
-                        task.wait(6)
-                    end 
-                end 
-            end 
-            task.wait()
+    Flag = "YVX", 
+    Callback = function(state) YV = state 
+        while YV do wait (5)
+            if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Yvxos")   
+                task.wait(25)
+            end
         end 
     end 
 })
 
-mainsec1:AddToggle({
-    Name = "Spam Selected Skill", 
+mainsec3:AddToggle({
+    Name = "Auto TP to mob (Hallow)", 
     Value = false, 
-    Flag = "SSS", 
-    Callback = function(state) tn = state 
-        while tn do 
-            if getclosestmob() ~= nil then 
-                if table.find((ppmr or {}), "Holy Charm F") then 
-                    game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "HolyHoly Charm", math.random, "Meteor")
-                end 
-                if table.find((ppmr or {}), "Aurelion Hood F") then 
-                    game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "AureusAurelion Hood", math.random, "Darkness")
-                end 
-                if table.find((ppmr or {}), "Judgement Blade R") then 
-                    game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "EmpyreusJudgement Blade", math.random, "Cast")
-                end 
-                if table.find((ppmr or {}), "Aurelion Hood R") then 
-                    game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "AureusAurelion Hood", math.random, "Enroot")
-                end 
-                if table.find((ppmr or {}), "Inferno Charm F") then 
-                    game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "InfernoInferno Charm", math.random, "Stormage")
-                end 
-                if table.find((ppmr or {}), "Solar Staff M1") then 
-                    game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "Solar Staff", math.random, "Annihilate", getclosestmob().HumanoidRootPart.Position)
-                end 
-                if table.find((ppmr or {}), "Darkmatter Fists Smash") then 
-                    game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "MatterDarkmatter Fists", math.random, "Pound")
-                end 
+    Flag = "TMT", 
+    Callback = function(state) TL = state 
+        if (game:GetService("Players")["LocalPlayer"].PlayerGui.Interface:FindFirstChild("WaveProgression")) then
+            while TL do 
+                    if getclosestmob() ~= nil then 
+                        hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+                    end 
+                task.wait()    
             end 
-            task.wait(#(ppmr or {}) * .25)
         end 
+    end
+})
+
+mainsec3:AddToggle({
+    Name = "Auto TP to mob (Yvxos and Banland)", 
+    Value = false, 
+    Flag = "TPP", 
+    Callback = function(state) OM = state 
+        if (game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
+            while OM do 
+                    if getclosestmob() ~= nil then 
+                        hrp.CFrame = getclosestmob().HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+                    end 
+                task.wait()    
+            end 
+        end 
+    end
+})
+
+mainsec4:AddToggle({
+    Name = "Auto Stay", 
+    Value = false, 
+    Flag = "SKI", 
+    Callback = function(state) SK = state 
+        while SK do wait ("1")
+            local args = {[1] = "Stay"}
+            game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+        end 
+    end 
+})
+
+Spam1:AddToggle({
+    Name = "Spam EmpyreusJudgement Blade ***if you have builds you op***",
+    Value = false, 
+    Flag = "Ascendant", 
+    Callback = function(state) lk = state 
+        while lk do 
+            game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "EmpyreusJudgement Blade", "10", "Cast")
+            task.wait(KO)
+        end 
+    end 
+})
+
+Spam1:AddSlider({
+    Name = "EmpyreusJudgement Blade",
+    Value = .5,
+    Min = .1, 
+    Max = 1, 
+    Flag = "EA", 
+    Callback = function(value) 
+        KO = value 
+    end 
+})
+
+Spam1:AddToggle({
+    Name = "Spam KronosChronobonum", 
+    Value = false, 
+    Flag = "IO", 
+    Callback = function(state) k = state
+        while k do 
+local args = {
+    [1] = "Input",
+    [2] = "KronosChronobonum",
+    [3] = 9,
+    [4] = "Horns"
+}
+game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer(unpack(args))
+            task.wait(OW)
+        end 
+    end 
+})
+
+Spam1:AddSlider({
+    Name = "KronosChronobonum",
+    Value = .5,
+    Min = .1, 
+    Max = 1, 
+    Flag = "MV", 
+    Callback = function(value) 
+        OW = value 
     end 
 })
 
@@ -1066,16 +1049,6 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end 
     end 
 end)
-
-mainsec1:AddDropdown({
-    Name = "Select Skill(s) To Spam", 
-    Nothing = "Select...", 
-    Multi = true,
-    List = {"Holy Charm F", "Aurelion Hood F", "Judgement Blade R", "Aurelion Hood R", "Inferno Charm F", "Solar Staff M1", "Darkmatter Fists Smash"},
-    Callback = function(selected) 
-        ppmr = selected 
-    end 
-})
 
 game:GetService("RunService").Stepped:Connect(function()
     if mn then 
@@ -1097,6 +1070,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
         hrp.Velocity = Vector3.new(0, -1, 0)
     end
 end) 
+
 
 local oldnc 
 oldnc = hookmetamethod(game, "__namecall", function(self, ...)
