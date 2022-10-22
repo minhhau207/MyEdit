@@ -28,6 +28,22 @@ if game:GetService("ReplicatedStorage"):WaitForChild("UnloadedEnemies") then
     end 
 end
 
+plr.OnTeleport:Connect(function(state)
+	if state == Enum.TeleportState.Started then
+		if queueteleport then
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/Shadovis%20RPG%20Remade'))()
+		end
+	end
+end)
+
+plr.OnTeleport:Connect(function(state)
+	if state == Enum.TeleportState.Started then
+		if queueteleport then
+			queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/Shadovis%20RPG%20Remade'))()")
+		end
+	end
+end)
+
 plr.CharacterAdded:Connect(function(character)
     cha = character 
     hrp = cha:WaitForChild("HumanoidRootPart")
