@@ -282,6 +282,10 @@ local mainsec3 = main2:CreateSection({
     Name = "TP to Mob"
 })
 
+local mainsec4 = main2:CreateSection({
+    Name = "Auto"
+})
+
 local Spam1 = main3:CreateSection({
     Name = "Skill"
 })
@@ -903,9 +907,10 @@ mainsec2:AddToggle({
     Value = false, 
     Flag = "AJR", 
     Callback = function(state) ut = state 
-        while ut do task.wait(15)
+        while ut do 
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Banland")
+                task.wait(15)
             end
         end 
     end 
@@ -916,9 +921,10 @@ mainsec2:AddToggle({
     Value = false, 
     Flag = "HAL", 
     Callback = function(state) HL = state 
-        while HL do task.wait(15)
+        while HL do 
                 if (not game:GetService("Players")["LocalPlayer"].PlayerGui.Interface:FindFirstChild("WaveProgression")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Halloween")
+                task.wait(15)
             end
         end 
     end 
@@ -929,9 +935,10 @@ mainsec2:AddToggle({
     Value = false, 
     Flag = "YVX", 
     Callback = function(state) YV = state 
-        while YV do task.wait(15)
+        while YV do
             if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Yvxos")   
+                task.wait(15)
             end
         end 
     end 
@@ -967,6 +974,18 @@ mainsec3:AddToggle({
             end 
         end 
     end
+})
+
+mainsec4:AddToggle({
+    Name = "Auto Stay", 
+    Value = false, 
+    Flag = "SKI", 
+    Callback = function(state) SK = state 
+        while SK do wait ("1")
+            local args = {[1] = "Stay"}
+            game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+        end 
+    end 
 })
 
 Spam1:AddToggle({
