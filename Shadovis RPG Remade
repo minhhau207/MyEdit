@@ -899,9 +899,24 @@ mainsec2:AddToggle({
     Value = false, 
     Flag = "HAL", 
     Callback = function(state) HL = state 
-        while HL do wait (15)
+        while HL do 
                 if (not game:GetService("Players")["LocalPlayer"].PlayerGui.Interface:FindFirstChild("WaveProgression")) then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Halloween")
+                task.wait(15)
+            end
+        end 
+    end 
+})
+
+mainsec2:AddToggle({
+    Name = "Auto Join Yvxos Raid", 
+    Value = false, 
+    Flag = "YVX", 
+    Callback = function(state) YV = state 
+        while YV do
+            if (not game:GetService("Workspace"):FindFirstChild("Cutscenes")) then 
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer("StartRaid", "Yvxos")   
+                task.wait(120)
             end
         end 
     end 
