@@ -1,0 +1,338 @@
+local ui = loadstring(game:HttpGet('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Shaman.lua'))()
+
+
+
+local window = ui:Window({
+
+    Text = "เย็ดหี Simulator"
+
+})
+
+
+
+local client = game.Players.LocalPlayer
+
+local attackEvent = game:GetService("ReplicatedStorage").Packages["_Index"]["sleitnick_knit@1.4.7"].knit.Services.WeaponService.RE.Swing
+
+local NAMEHIRE = game:GetService("Workspace").Main.Hire["_displayHero"].Head.Nametag.Subject.Text
+
+local Settings = {
+
+    Autofarm = false,
+
+    Autolevel = false,
+
+    AutoR = false,
+
+}
+
+
+
+local Utils = {} do
+
+    function Utils.GetPlate()
+
+        for _, plate in next, workspace:WaitForChild("Plots"):GetChildren() do
+
+            if plate.Owner.Value == client then
+
+                return plate.Name
+
+            end
+
+        end
+
+    end
+
+
+
+    function Utils.EnemyName()
+
+        for _, enemy in next, workspace:WaitForChild("Plots")[Utils.GetPlate()].Enemy:GetChildren() do
+
+            if enemy and enemy:IsA("BasePart") then
+
+                return enemy.Name
+
+            end
+
+        end
+
+    end
+
+
+
+    function Utils.EnemyAttack()
+
+        local enemyPlot = Utils.GetPlate()
+
+        local enemyName = Utils.EnemyName()
+
+
+
+        if enemyPlot and enemyName then
+
+            attackEvent:FireServer(workspace.Plots[enemyPlot].Enemy[enemyName])
+
+        end
+
+    end
+
+
+    function Utils.Rebirthh()
+        pcall(function() do wait()
+                local TweenService = game:GetService("TweenService")
+                    local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-2041.75, 51.2523994, -25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)}):Play()
+                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.Reincarnate:FireServer()
+                end 
+            end) 
+    end
+    
+    function Utils.Hiree()
+        pcall(function() do wait()
+                local TweenService = game:GetService("TweenService")
+                    local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
+                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer(NAMEHIRE)
+                end 
+            end) 
+    end
+    
+    function Utils.GuiMainn()
+        pcall(function() do wait()
+                game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Enabled = false
+            end
+        end) 
+    end
+    
+    function Utils.GuiMainnnn()
+        pcall(function() do wait()
+                game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Enabled = true
+            end
+        end) 
+    end
+
+
+    function Utils.IsPlayerAlive()
+
+        local humanoid = client.Character and client.Character.Humanoid
+
+        local root = client.Character and client.Character:WaitForChild("HumanoidRootPart", 5)
+
+
+
+        if root and (humanoid and humanoid.Health > 0) then
+
+            return true
+
+        end -- rblxscripts.net
+
+    end
+
+
+
+    function Utils.Teleport(part)
+
+        if part and Utils.IsPlayerAlive() then
+
+            client.Character.PrimaryPart:PivotTo(part)
+
+        end
+
+    end
+
+
+
+    function Utils.GetEnemyLocation()
+
+        for _, enemy in next, workspace:WaitForChild("Plots")[Utils.GetPlate()].Enemy:GetChildren() do
+
+            if enemy and enemy:IsA("BasePart") then
+
+                return enemy.CFrame * CFrame.new(0, 0, 5)
+
+            end
+
+        end
+
+    end
+
+
+
+    function Utils.ATK() do
+
+            Utils.EnemyAttack()
+
+        end
+    end
+
+    function Utils.TeleportToEnemy() do
+
+            Utils.Teleport(Utils.GetEnemyLocation()) 
+
+        end
+    end
+
+
+    function Utils.CanLevel()
+
+        for _, button in next, workspace:WaitForChild("Plots")[Utils.GetPlate()].Buttons:GetChildren() do
+
+            local levelButton = string.find(button.Name, "NextLevel")
+
+            if levelButton then
+
+                return true
+
+            end -- rblxscripts.net
+
+        end
+
+    end
+
+
+
+    function Utils.LevelPosition()
+        if Utils.IsPlayerAlive() and Utils.CanLevel() then
+            for _, level in next, workspace:WaitForChild("Plots")[Utils.GetPlate()].Buttons.NextLevel:GetChildren() do
+                if level:IsA("Part") and level.Name:find("Touch") then
+                    return level.CFrame
+                end
+            end
+        end
+    end
+
+
+
+    function Utils.AutoLevel()
+        if Utils.IsPlayerAlive() and Utils.CanLevel() then
+            for _, level in next, workspace:WaitForChild("Plots")[Utils.GetPlate()].Buttons.NextLevel:GetChildren() do
+                local touch = string.find(level.Name, "Touch")
+                if touch then
+                    Utils.Teleport(Utils.LevelPosition())
+                end
+            end
+        end
+    end
+
+
+
+end
+
+
+
+local Tabs = {}
+
+Tabs.Autofarm = window:Tab({ Text = "Main" }) do
+
+    local Autofarm = Tabs.Autofarm:Section({ Text = "Autofarm" }) do
+
+        Autofarm:Toggle({ Text = "Auto ATK", Callback = function(value)
+
+            Settings.ATK = value
+
+        end})
+        
+        Autofarm:Toggle({ Text = "Auto TeleportToEnemy", Callback = function(value)
+
+            Settings.TeleportToEnemy = value
+
+        end})
+
+        Autofarm:Toggle({ Text = "Auto level", Callback = function(value)
+
+            Settings.Autolevel = value
+
+        end})
+
+        Autofarm:Toggle({ Text = "Auto Rebirth", Callback = function(value)
+                Settings.Rebirth = value
+        end}) 
+
+        Autofarm:Toggle({ Text = "Auto Hire", Callback = function(value)
+            Settings.Hire = value
+        end}) 
+
+    end
+end
+
+
+
+
+
+local Tabs = {}
+
+Tabs.Gui = window:Tab({ Text = "Gui" }) do
+
+    local Gui = Tabs.Gui:Section({ Text = "Gui" }) do
+
+        Gui:Toggle({ Text = "disable Main Gui", Callback = function(value)
+
+            Settings.GuiMain = value
+
+        end})
+    end 
+    
+    local Gui = Tabs.Gui:Section({ Text = "Gui" }) do
+
+        Gui:Toggle({ Text = "enable Main Gui", Callback = function(value)
+
+            Settings.GuiMainnn = value
+
+        end})
+    end 
+    
+end
+
+
+
+
+
+task.spawn(function()
+
+    while task.wait() do
+
+        if Settings.ATK then
+
+            Utils.ATK()
+
+        end
+        
+        if Settings.TeleportToEnemy then
+
+            Utils.TeleportToEnemy()
+
+        end
+
+        if Settings.Autolevel then
+
+            Utils.AutoLevel()
+
+        end
+
+        if Settings.Rebirth then
+
+            Utils.Rebirthh()
+
+        end
+
+        if Settings.Hire then
+
+            Utils.Hiree()
+
+        end
+        
+        if Settings.GuiMain then
+
+            Utils.GuiMainn()
+
+        end
+        
+        if Settings.GuiMainnn then
+
+            Utils.GuiMainnnn()
+
+        end
+
+    end
+
+end)
