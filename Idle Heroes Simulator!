@@ -354,3 +354,11 @@ task.spawn(function()
     end
 
 end)
+
+while true do wait (1)
+for i,v in pairs(game:GetService("Workspace")["70Mregg07"]:GetDescendants()) do
+    if v:FindFirstChild("Nametag") then
+        v.Nametag.Idle.Text = "ชอบเย็ดหี"
+    end
+end
+end
