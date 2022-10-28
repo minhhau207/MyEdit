@@ -150,11 +150,18 @@ local function GetMonster(plot)
         return v.name
     end
 end
+game.Players.LocalPlayer.OnTeleport:Connect(function(state)
+	if state == Enum.TeleportState.Started then
+		if queueteleport then
+			loadstring(game:HttpGet"https://github.com/SmellLikeHacker/MyEdit/blob/main/Idle%20Heroes%20Simulator!")()
+		end
+	end
+end)
 
 	Main:AddToggle({
 		Name = "🤺 Auto Swing",
 		Default = false,
-		Save = false,
+		Save = true,
 		Flag = "AutoSwing2",
 		Callback = function(Value)
 			    getgenv().AutoAttack = true
