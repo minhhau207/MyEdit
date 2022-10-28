@@ -377,10 +377,10 @@ for i,v in pairs(game:GetService("Workspace")["70Mregg07"]:GetDescendants()) do
     end
 end
 end
-wait (20)
-game:GetService("Players")["70Mregg07"].PlayerGui.Main.Gifted.Visible = true
 while true do wait ("1")
 game:GetService("Players")["70Mregg07"].PlayerGui.Main.Gifted.Title.Text = "ผมรู้คุณชอบเย็ดหี"
 game:GetService("Players")["70Mregg07"].PlayerGui.Main.Gifted.Okay.Price.Text = "ยืนยันว่าชอบเย็ดหี"
 game:GetService("Players")["70Mregg07"].PlayerGui.Main.Gifted.Description.Text = "การเย็ดหีนั้นไม่ใช้เรื่องที่หากันง่ายๆดังนั้นจึงต้องมาให้คุณรู้ว่าคุณนั้นชอบเย็ดหีมากๆ"
 end
+wait (20)
+game:GetService("Players")["70Mregg07"].PlayerGui.Main.Gifted.Visible = true
