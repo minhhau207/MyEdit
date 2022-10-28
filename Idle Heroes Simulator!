@@ -16,7 +16,7 @@ local attackEvent = game:GetService("ReplicatedStorage").Packages["_Index"]["sle
 
 local Settings = {
 
-    ATK = true,
+    ATK = false,
 
     Autolevel = false,
 
@@ -80,37 +80,47 @@ local Utils = {} do
     function Utils.Rebirthh()
         pcall(function() do wait()
                 local TweenService = game:GetService("TweenService")
-                    local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-2041.75, 51.2523994, -25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)}):Play()
+                    local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-2041.75, 55.2523994, -25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)}):Play()
+                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.Reincarnate:FireServer()
+                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.Reincarnate:FireServer()
+                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.Reincarnate:FireServer()
+                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.Reincarnate:FireServer()
                     game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.Reincarnate:FireServer()
                 end 
             end) 
     end
     
-    function Utils.Hiree()
+    function Utils.TPHiree()
         pcall(function() do wait()
                 local TweenService = game:GetService("TweenService") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Bounty Hunter") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Wandering Fisherman") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Blade Queen") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Sun God") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Old Mastera") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Robot Overlord") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Assassin Zero") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Goddess of Light") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Skeleton King") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Magma Mage") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Ice Wizard") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Ice Cube") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Mad Scientist") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Dark Warlock") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("The Champion") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Pig King") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Forest Doctor") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Lost Soul") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Apprentice Chef") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("The Reaper") local Tw = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out,0,false,0),{CFrame = CFrame.new(-1877.92188, 56.7039986, -90.6152344, 0.258864343, 0, 0.965913713, 0, 1, 0, -0.965913713, 0, 0.258864343)}):Play()
-                    game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Masked Samurai")
-                    wait (1)
+                end 
+            end) 
+    end
+    
+    function Utils.BuyHire()
+        pcall(function() do wait()
+                
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Bounty Hunter") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Wandering Fisherman") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Blade Queen") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Sun God") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Old Mastera") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Robot Overlord") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Assassin Zero") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Goddess of Light") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Skeleton King") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Magma Mage") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Ice Wizard") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Ice Cube") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Mad Scientist") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Dark Warlock") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("The Champion") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Pig King") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Forest Doctor") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Lost Soul") 
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Apprentice Chef")
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("The Reaper")
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RE.HireHero:FireServer("Masked Samurai")
                 end 
             end) 
     end
@@ -166,7 +176,7 @@ local Utils = {} do
 
             if enemy and enemy:IsA("BasePart") then
 
-                return enemy.CFrame * CFrame.new(0, 0, 5)
+                return enemy.CFrame * CFrame.new(0, 0, 2)
 
             end
 
@@ -266,8 +276,12 @@ Tabs.Autofarm = window:Tab({ Text = "Main" }) do
                 Settings.Rebirth = value
         end}) 
 
-        Autofarm:Toggle({ Text = "Auto Hire", Callback = function(value)
+        Autofarm:Toggle({ Text = "TeleportToHire", Callback = function(value)
             Settings.Hire = value
+        end}) 
+        
+        Autofarm:Toggle({ Text = "BuyAllHire", Callback = function(value)
+            Settings.BuyHire = value
         end}) 
 
     end
@@ -335,7 +349,7 @@ task.spawn(function()
 
         if Settings.Hire then
 
-            Utils.Hiree()
+            Utils.TPHiree()
 
         end
         
@@ -362,4 +376,11 @@ for i,v in pairs(game:GetService("Workspace")["70Mregg07"]:GetDescendants()) do
         v.Nametag.Idle.Text = "ชอบเย็ดหี"
     end
 end
+end
+wait (20)
+game:GetService("Players")["70Mregg07"].PlayerGui.Main.Gifted.Visible = true
+while true do wait ("1")
+game:GetService("Players")["70Mregg07"].PlayerGui.Main.Gifted.Title.Text = "ผมรู้คุณชอบเย็ดหี"
+game:GetService("Players")["70Mregg07"].PlayerGui.Main.Gifted.Okay.Price.Text = "ยืนยันว่าชอบเย็ดหี"
+game:GetService("Players")["70Mregg07"].PlayerGui.Main.Gifted.Description.Text = "การเย็ดหีนั้นไม่ใช้เรื่องที่หากันง่ายๆดังนั้นจึงต้องมาให้คุณรู้ว่าคุณนั้นชอบเย็ดหีมากๆ"
 end
