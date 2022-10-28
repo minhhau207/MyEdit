@@ -154,20 +154,18 @@ end
 	Main:AddToggle({
 		Name = "🤺 Auto Swing",
 		Default = false,
-		Save = true,
+		Save = false,
 		Flag = "AutoSwing2",
 		Callback = function(Value)
-			Swing2Looping = Value
 			    getgenv().AutoAttack = true
-RunService.RenderStepped:Connect(function()
-    if not getgenv().AutoAttack then return end
-    local PlotName = GetPlot()
-    local plot = workspace.Plots:FindFirstChild(PlotName)
-    local MonsterName = GetMonster(plot)
-    local monster = plot.Enemy:FindFirstChild(MonsterName)
-    game:GetService("ReplicatedStorage").Packages._Index["sleitnick_knit@1.4.7"].knit.Services.WeaponService.RE.Swing:FireServer(monster)
-end)
-            
+                RunService.RenderStepped:Connect(function()
+                if not getgenv().AutoAttack then return end
+                local PlotName = GetPlot()
+                local plot = workspace.Plots:FindFirstChild(PlotName)
+                local MonsterName = GetMonster(plot)
+                local monster = plot.Enemy:FindFirstChild(MonsterName)
+                game:GetService("ReplicatedStorage").Packages._Index["sleitnick_knit@1.4.7"].knit.Services.WeaponService.RE.Swing:FireServer(monster)
+            end)
 		end
 	})
 
@@ -401,7 +399,7 @@ end)
 					end
 				elseif not game:GetService("Workspace").Main.Hire:FindFirstChild("_displayHero") and not Plot.Heroes:FindFirstChild("The Reaper") then
 					IsInLoopAutoHire = true
-
+wait (5)
 					if IsInLoopReincarnate then
 						repeat task.wait() until not IsInLoopReincarnate
 					elseif IsInLoopNextLevel then
