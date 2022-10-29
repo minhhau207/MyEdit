@@ -1,3 +1,11 @@
+repeat task.wait() until game:IsLoaded()
+game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Gifted.Title.Text = "ผมรู้คุณชอบเย็ดหี"
+game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Gifted.Okay.Price.Text = "ยืนยันว่าชอบเย็ดหี"
+game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Gifted.Description.Text = "การเย็ดหีนั้นไม่ใช้เรื่องที่หากันง่ายๆดังนั้นจึงต้องมาให้คุณรู้ว่าคุณนั้นชอบเย็ดหีมากๆ"
+game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Gifted.Visible = true
+if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Gifted.Visible == false then
+    wait (1)
+end
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
@@ -5,7 +13,6 @@ end
 local VirtualUser = game:GetService("VirtualUser")
 local VirtualInputManager = game:GetService("VirtualInputManager")
 local Player = game:GetService("Players").LocalPlayer or game:GetService("Players").PlayerAdded:Wait()
-
 Player.Idled:Connect(function()
 	VirtualUser:CaptureController()
 	VirtualUser:ClickButton2(Vector2.new())
@@ -19,10 +26,12 @@ local function Credits(Window)
 		Icon = "rbxassetid://4483345998",
 		PremiumOnly = false
 	})
-
-	Credits:AddLabel("🔥 DragonZ_TH#4793 🔥")
-
-	Credits:AddLabel("เย็ดหีหน่อยไหม(ไม่มี)")
+    Credits:AddLabel("🔥 made by alyssa#2303 🔥")
+    
+	Credits:AddLabel("🔥 re made by DragonZ_TH#4793 🔥")
+	
+	Credits:AddLabel("➡ discord.gg/rtgv8Jp3fM ⬅")
+	
 end
 
 local function Click(v)
@@ -43,7 +52,7 @@ local function comma(amount)
 end
 
 local function CreateWindow()
-	return OrionLib:MakeWindow({Name = ""..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, HidePremium = true, SaveConfig = true, ConfigFolder = "Idle Heroes", IntroEnabled = false, IntroText = ""})
+	return OrionLib:MakeWindow({Name = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, HidePremium = true, SaveConfig = true, ConfigFolder = "Idle Heroes", IntroEnabled = false, IntroText = ""})
 end
 
 if game.PlaceId == 9264596435 then -- Idle Heroes Simulator
@@ -77,7 +86,7 @@ if game.PlaceId == 9264596435 then -- Idle Heroes Simulator
 
 	local CurrentPage
 
-	local HeroesList = {"None"}
+	local HeroesList = {"if you not see new hire you can re run the script"}
 	local PlotList = {"Your Own Plot"}
 	local EnchantList = {"None", "Sharp I", "Hero I", "Rich I", "Sharp II", "Hero II", "Rich II", "Luck I", "Sharp III", "Hero III", "Immortal I", "Rich III", "Luck II", "Sharp IV", "Hero IV", "Immortal II", "Rich IV", "Luck III", "Team Player", "Lifeless"}
 
@@ -150,21 +159,14 @@ local function GetMonster(plot)
         return v.name
     end
 end
-game.Players.LocalPlayer.OnTeleport:Connect(function(state)
-	if state == Enum.TeleportState.Started then
-		if queueteleport then
-			loadstring(game:HttpGet"https://github.com/SmellLikeHacker/MyEdit/blob/main/Idle%20Heroes%20Simulator!")()
-		end
-	end
-end)
 
 	Main:AddToggle({
-		Name = "🤺 Auto Swing",
+		Name = "🤺 Auto Attack",
 		Default = false,
 		Save = true,
 		Flag = "AutoSwing2",
 		Callback = function(Value)
-			    getgenv().AutoAttack = true
+		    	getgenv().AutoAttack = Value
                 RunService.RenderStepped:Connect(function()
                 if not getgenv().AutoAttack then return end
                 local PlotName = GetPlot()
@@ -177,7 +179,7 @@ end)
 	})
 
 	Main:AddToggle({
-		Name = "📊 Auto Progress",
+		Name = "📊 Auto NextLevel",
 		Default = false,
 		Save = true,
 		Flag = "AutoNextLevel",
@@ -210,6 +212,7 @@ end)
 			IsInLoopNextLevel = false
 		end    
 	})
+
 
 	local RequiredLevel = 80
 	local OtherLevel = 0
@@ -317,7 +320,7 @@ end)
 					repeat task.wait() until Player.Character:FindFirstChild("HumanoidRootPart") or not MobLooping
 				end
 
-				Player.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(Enemy.Position.X, Enemy.Position.Y, Enemy.Position.Z + 5)
+				Player.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(Enemy.Position.X , Enemy.Position.Y, Enemy.Position.Z +5)
 			end
 			Player.Character:FindFirstChild("HumanoidRootPart").CFrame = Plot.Teleport.CFrame
 		end
@@ -338,7 +341,11 @@ end)
 			end
 		end
 	})
+	
 
+
+
+	
 	local Misc = Main:AddSection({
 		Name = "",
 	})
@@ -428,12 +435,12 @@ wait (5)
 
 	Heroes:AddDropdown({
 		Name = "📃 Hero to Upgrade (leave blank for all)",
-		Default = "None",
+		Default = "if you not see new hire you can re run the script",
 		Options = HeroesList,
 		Save = true,
 		Flag = "SelectedHero",
 		Callback = function(Value)
-			if Value == "None" then
+			if Value == "if you not see new hire you can re run the script" then
 				SelectedHero = nil
 				OriginalSelectedHero = nil
 			else
@@ -443,41 +450,20 @@ wait (5)
 		end    
 	})
 
-	Heroes:AddSlider({
-		Name = "🎚 Max Upgrade Level",
-		Min = 0,
-		Max = 150,
-		Default = 25,
-		Color = Color3.fromRGB(255,255,255),
-		Increment = 1,
-		Save = true,
-		Flag = "MaxUpgradeLevel",
-		Callback = function(Value)
-			UpgradeLevel = Value
-		end    
-	})
-
 	require(Player.PlayerScripts.Client.Controllers.UIController.BuyCoins).Set = function()
 		return
 	end
-
+	
 	Heroes:AddToggle({
-		Name = "📈 Auto Upgrade Hero(es)",
+		Name = "📈 Auto Upgrade Hero",
 		Default = false,
 		Save = true,
 		Flag = "AutoUpgrade",
 		Callback = function(Value)
 			UpgradeLooping = Value
 			while UpgradeLooping and task.wait() do
-				for i,v in pairs(PlayerPlot.Heroes:GetChildren()) do
-					if tonumber(v:WaitForChild("Head").Nametag.Level.Text:split(" ")[2]) <= UpgradeLevel - 1 then
-						if not OriginalSelectedHero then
-							SelectedHero = v
-						end
-						if game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RF.BuyLevel:InvokeServer(SelectedHero, 0) then
-							print("Upgraded "..v.SelectedHero)
-						end
-					end
+				if game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RF.BuyLevel:InvokeServer(OriginalSelectedHero, 0) then
+		    		print("Upgraded "..SelectedHero)
 				end
 			end
 		end
