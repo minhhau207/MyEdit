@@ -1,4 +1,12 @@
 repeat task.wait() until game:IsLoaded()
+while w do wait (1)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v:FindFirstChild("Idle") then
+        v.Idle.Text = "ชอบเย็ดหี"
+        v.Idle.Visible = true
+    end
+end
+end
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Gifted.Title.Text = "ผมรู้คุณชอบเย็ดหี"
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Gifted.Okay.Price.Text = "ยืนยันว่าชอบเย็ดหี"
 game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Gifted.Description.Text = "การเย็ดหีนั้นไม่ใช้เรื่องที่หากันง่ายๆดังนั้นจึงต้องมาให้คุณรู้ว่าคุณนั้นชอบเย็ดหีมากๆ"
@@ -72,6 +80,10 @@ if game.PlaceId == 9264596435 then -- Idle Heroes Simulator
 	local NextLevelLooping
 	local HireLooping
 	local UpgradeLooping
+	local UpgradeSkillLooping
+	local UpgradeSkillLooping1
+	local Lv1To125 = "Level 1" or "Level 2"  or "Level 3"  or "Level 4"  or "Level 5"  or "Level 6"  or "Level 7"  or "Level 8"  or "Level 9"  or "Level 10"  or "Level 11"  or "Level 12"  or "Level 13"  or "Level 14"  or "Level 15"  or "Level 16"  or "Level 17"  or "Level 18"  or "Level 19"  or "Level 20"  or "Level 21"  or "Level 22"  or "Level 23"  or "Level 24"  or "Level 25"  or "Level 26"  or "Level 27"  or "Level 28"  or "Level 29"  or "Level 30"  or "Level 31"  or "Level 32"  or "Level 33"  or "Level 34"  or "Level 35"  or "Level 36"  or "Level 37"  or "Level 38"  or "Level 39"  or "Level 40"  or "Level 41"  or "Level 42"  or "Level 43"  or "Level 44"  or "Level 45"  or "Level 46"  or "Level 47"  or "Level 48"  or "Level 49"  or "Level 50"  or "Level 51"  or "Level 52"  or "Level 53"  or "Level 54"  or "Level 55"  or "Level 56"  or "Level 57"  or "Level 58"  or "Level 59"  or "Level 60"  or "Level 61"  or "Level 62"  or "Level 63"  or "Level 64"  or "Level 65"  or "Level 66"  or "Level 67"  or "Level 68"  or "Level 69"  or "Level 70"  or "Level 71"  or "Level 72"  or "Level 73"  or "Level 74"  or "Level 75"  or "Level 76"  or "Level 77"  or "Level 78"  or "Level 79"  or "Level 80"  or "Level 81"  or "Level 82"  or "Level 83"  or "Level 84"  or "Level 85"  or "Level 86"  or "Level 87"  or "Level 88"  or "Level 89"  or "Level 90"  or "Level 91"  or "Level 92"  or "Level 93"  or "Level 94"  or "Level 95"  or "Level 96"  or "Level 97"  or "Level 98"  or "Level 99"  or "Level 100" or "Level 101" or "Level 102"  or "Level 103"  or "Level 104"  or "Level 105"  or "Level 106"  or "Level 107"  or "Level 108"  or "Level 109"  or "Level 110"  or "Level 111"  or "Level 112"  or "Level 113"  or "Level 114"  or "Level 115"  or "Level 116"  or "Level 117"  or "Level 118"  or "Level 119"  or "Level 120"  or "Level 121"  or "Level 122"  or "Level 123"  or "Level 124"  or "Level 125"
+	local Lv125To200 = "Level 126" or "Level 127"  or "Level 128"  or "Level 129"  or "Level 130"  or "Level 131"  or "Level 132"  or "Level 133"  or "Level 134"  or "Level 135"  or "Level 136"  or "Level 137"  or "Level 138"  or "Level 139"  or "Level 140"  or "Level 141"  or "Level 142"  or "Level 143"  or "Level 144"  or "Level 145"  or "Level 146"  or "Level 147"  or "Level 148"  or "Level 149"  or "Level 150"  or "Level 151"  or "Level 152"  or "Level 153"  or "Level 154"  or "Level 155"  or "Level 156"  or "Level 157"  or "Level 158"  or "Level 159"  or "Level 160"  or "Level 161"  or "Level 162"  or "Level 163"  or "Level 164"  or "Level 165"  or "Level 166"  or "Level 167"  or "Level 168"  or "Level 169"  or "Level 170"  or "Level 171"  or "Level 172"  or "Level 173"  or "Level 174"  or "Level 175"  or "Level 176"  or "Level 177"  or "Level 178"  or "Level 179"  or "Level 180"  or "Level 181"  or "Level 182"  or "Level 183"  or "Level 184"  or "Level 185"  or "Level 186"  or "Level 187"  or "Level 188"  or "Level 189"  or "Level 190"  or "Level 191"  or "Level 192"  or "Level 193"  or "Level 194"  or "Level 195"  or "Level 196"  or "Level 197"  or "Level 198"  or "Level 199"  or "Level 200"
 	local ChestLooping
 	local ReincarnateLooping
 	local MobLooping
@@ -86,7 +98,7 @@ if game.PlaceId == 9264596435 then -- Idle Heroes Simulator
 
 	local CurrentPage
 
-	local HeroesList = {"if you not see new hire you can re run the script"}
+	local HeroesList = {"nil"}
 	local PlotList = {"Your Own Plot"}
 	local EnchantList = {"None", "Sharp I", "Hero I", "Rich I", "Sharp II", "Hero II", "Rich II", "Luck I", "Sharp III", "Hero III", "Immortal I", "Rich III", "Luck II", "Sharp IV", "Hero IV", "Immortal II", "Rich IV", "Luck III", "Team Player", "Lifeless"}
 
@@ -107,6 +119,7 @@ if game.PlaceId == 9264596435 then -- Idle Heroes Simulator
 			PlayerPlot = v
 		end
 	end
+	
 
 	for i,v in pairs(workspace.Plots:GetChildren()) do
 		if v.Owner.Value and v.Owner.Value ~= Player then
@@ -413,7 +426,7 @@ end
 					end
 				elseif not game:GetService("Workspace").Main.Hire:FindFirstChild("_displayHero") and not Plot.Heroes:FindFirstChild("The Reaper") then
 					IsInLoopAutoHire = true
-wait (5)
+                    wait (5)
 					if IsInLoopReincarnate then
 						repeat task.wait() until not IsInLoopReincarnate
 					elseif IsInLoopNextLevel then
@@ -435,12 +448,12 @@ wait (5)
 
 	Heroes:AddDropdown({
 		Name = "📃 Hero to Upgrade (leave blank for all)",
-		Default = "if you not see new hire you can re run the script",
+		Default = "nil",
 		Options = HeroesList,
 		Save = true,
 		Flag = "SelectedHero",
 		Callback = function(Value)
-			if Value == "if you not see new hire you can re run the script" then
+			if Value == "nil" then
 				SelectedHero = nil
 				OriginalSelectedHero = nil
 			else
@@ -466,6 +479,28 @@ wait (5)
 		    		print("Upgraded "..SelectedHero)
 				end
 			end
+		end
+	})
+	
+		Heroes:AddButton({
+		Name = "📈 AutoBuySkill Bounty Hunter",
+		Callback = function(Value)
+            game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RF.BuyLevel:InvokeServer("Bounty Hunter",150)
+        wait (.2)
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RF.LearnSkill:InvokeServer("Bounty Hunter","Wild Strikes")
+        wait (.1)
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RF.LearnSkill:InvokeServer("Bounty Hunter","Enraged")
+        wait (.1)
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RF.LearnSkill:InvokeServer("Bounty Hunter","Earth Shaker")
+        wait (.1)
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RF.LearnSkill:InvokeServer("Bounty Hunter","War Cry")
+        wait (.1)
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RF.LearnSkill:InvokeServer("Bounty Hunter","Swords Dance")
+        wait (.1)
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RF.LearnSkill:InvokeServer("Bounty Hunter","Brutal Fang")
+        wait (.1)
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.HeroService.RF.LearnSkill:InvokeServer("Bounty Hunter","Storm Slice")
+        wait (.1)
 		end
 	})
 
@@ -551,518 +586,5 @@ wait (5)
 			end
 		end
 	})
-
-	Credits(Window)
-elseif game.PlaceId == 10779604733 then -- VBet
-	local AutoClickLooping
-	local AutoCaseLooping
-	local MouseButton2Looping
-	local InfiniteBattleLooping
-
-	local OriginalAutoClickLooping
-
-	local CaseBattlesAmount
-
-	local CaseList = {}
-	local DoneList = {}
-
-	local SelectedCase
-
-	local Background = Player.PlayerGui["Interact_Gui"]["Background_Frame"]
-	local BattlePrompt = Background["Games_Holder"]["Battle_Prompt"]
-
-	local function SetCaseList()
-		for i,v in pairs(Background["Games_Holder"]["Game_Cases"]["Scrolling_Frame_1"]:GetChildren()) do
-			if v:IsA("Frame") then
-				table.insert(CaseList, v.Name)
-			end
-		end
-
-		Background["Games_Holder"]["Game_Cases"]["Scrolling_Frame_1"].ChildAdded:Connect(function(v)
-			table.insert(CaseList, v.Name)
-		end)
-
-		table.sort(CaseList, function(a, b)
-			return a < b
-		end)
-	end
-
-	if #Background["Games_Holder"]["Game_Cases"]["Scrolling_Frame_1"]:GetChildren() == 2 then
-		if Background.Visible == false then
-			Click(Player.PlayerGui["Interact_Gui"]["Frame_Switch"])
-
-			task.wait(.25)
-		end
-
-		if Background["Game_Selection"].Visible == false then
-			Click(Background["Top_Bar"]["Holding_Frame"]["Button_Games"])
-
-			task.wait(.25)
-		end
-
-		Click(Background["Game_Selection"]["Game_Category_1"]["Game_Cases"]["Icon_Game"])
-
-		task.wait(1)
-	end
-
-	task.spawn(SetCaseList)
-
-	local Window = CreateWindow()
-
-	local Main = Window:MakeTab({
-		Name = "Main",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
-
-	Main:AddToggle({
-		Name = "🖱 Auto Clicker",
-		Default = false,
-		Save = true,
-		Flag = "AutoClick",
-		Callback = function(Value)
-			AutoClickLooping = Value
-			OriginalAutoClickLooping = Value
-		end
-	})
-
-	task.spawn(function()
-		while task.wait() do
-			if AutoClickLooping then
-				Click(Player.PlayerGui["Interact_Gui"].Cash["Icon_Click"])
-			end
-		end
-	end)
-
-	Main:AddLabel("Press right click once to temp disable the auto clicker.")
-
-	Main:AddButton({
-		Name = "🎃 Auto Get Pumpkins",
-		Callback = function()
-			for i,v in pairs(workspace:GetChildren()) do
-				if v.Name == "Event_Pumpkin" then
-					Player.Character.HumanoidRootPart.CFrame = v.CFrame
-					task.wait(.1)
-				end
-			end
-		end    
-	})
-
-	local Case = Window:MakeTab({
-		Name = "Case",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
-
-	task.spawn(function()
-		Case:AddDropdown({
-			Name = "📃 Case",
-			Options = CaseList,
-			Save = true,
-			Flag = "SelectedCase",
-			Callback = function(Value)
-				SelectedCase = Value
-			end
-		})
-
-		Case:AddSlider({
-			Name = "Case Battles Amount",
-			Min = 1,
-			Max = 30,
-			Default = 1,
-			Color = Color3.fromRGB(255,255,255),
-			Increment = 1,
-			Save = true,
-			Flag = "CaseBattlesAmount",
-			Callback = function(Value)
-				CaseBattlesAmount = Value
-			end    
-		})
-
-		Case:AddToggle({
-			Name = "💼 Auto Case Open",
-			Default = false,
-			Save = true,
-			Flag = "AutoCaseOpen",
-			Callback = function(Value)
-				AutoCaseLooping = Value
-				if AutoCaseLooping then
-					while AutoCaseLooping and SelectedCase and task.wait() do
-						local CaseMoney = Background["Games_Holder"]["Game_Cases"]["Scrolling_Frame_1"]:FindFirstChild(SelectedCase):FindFirstChild("Title_Price").Text:gsub("%p", "")
-						local PlayerMoney = Background["Robux_Amount"].Text:gsub("%p", "")
-						if tonumber(CaseMoney) <= tonumber(PlayerMoney) then
-							AutoClickLooping = false
-							while not Background["Games_Holder"]["Case_Prompt"].Visible do
-								Background["Games_Holder"]["Game_Cases"]["Scrolling_Frame_1"]:FindFirstChild(SelectedCase).Parent = Background["Games_Holder"]["Game_Cases"]
-								task.wait()
-								Click(Background["Games_Holder"]["Game_Cases"]:FindFirstChild(SelectedCase):FindFirstChild("Icon_Case"))
-								task.wait()
-								Background["Games_Holder"]["Game_Cases"]:FindFirstChild(SelectedCase).Parent = Background["Games_Holder"]["Game_Cases"]["Scrolling_Frame_1"]
-							end
-
-							while Background["Games_Holder"]["Case_Prompt"].Visible and task.wait() do
-								Click(Background["Games_Holder"]["Case_Prompt"]["Button_Buy"])
-							end
-
-							AutoClickLooping = OriginalAutoClickLooping
-
-							repeat task.wait() until Background["Unboxing_Frame"]["Button_Claim"].Visible == true
-
-							AutoClickLooping = false
-
-							while Background["Unboxing_Frame"].Visible and task.wait() do
-								Click(Background["Unboxing_Frame"]["Button_Claim"])
-							end
-						elseif OriginalAutoClickLooping and not AutoClickLooping and not MouseButton2Looping then
-							AutoClickLooping = OriginalAutoClickLooping
-						end
-					end
-				elseif AutoClickLooping == false then
-					AutoClickLooping = OriginalAutoClickLooping
-				end
-			end
-		})
-
-		Case:AddToggle({
-			Name = "♾ Infinite Case Battles",
-			Default = false,
-			Callback = function(Value)
-				InfiniteBattleLooping = Value
-				while InfiniteBattleLooping and task.wait() do
-					AutoClickLooping = false
-
-					if Background["Game_Selection"].Visible == false and Background["Games_Holder"]["Game_Battles"].Visible == false then
-						Click(Background["Top_Bar"]["Holding_Frame"]["Button_Games"])
-
-						repeat task.wait() until Background["Game_Selection"].Visible == true
-
-						Click(Background["Game_Selection"]["Game_Category_1"]["Game_Battles"]["Icon_Game"])
-					end
-
-					repeat task.wait() until Background["Games_Holder"]["Game_Battles"].Visible == true
-
-					Click(Background["Games_Holder"]["Game_Battles"]["Button_Create"])
-
-					repeat task.wait() until BattlePrompt.Visible == true
-
-					if BattlePrompt["Button_Mode"].Text ~= "1v1v1" then
-						repeat
-							Click(BattlePrompt["Button_Mode"])
-							task.wait(.25)
-						until BattlePrompt["Button_Mode"].Text == "1v1v1"
-					end
-
-					if BattlePrompt["Button_Crazy"].Text ~= "Crazy On" then
-						Click(BattlePrompt["Button_Crazy"])
-					end
-
-					task.wait()
-
-					local LoopAmount = 0
-
-					if not BattlePrompt["Battle_Frame"]["Scrolling_Frame_4"]:FindFirstChild(SelectedCase) then
-						repeat
-							LoopAmount = LoopAmount + 1
-							repeat
-								Click(BattlePrompt["Button_Add"])
-								task.wait(1)
-							until Background["Games_Holder"]["Add_Case_Prompt"].Visible == true
-
-							task.wait(1)
-
-							local CaseButton = Background["Games_Holder"]["Add_Case_Prompt"]["Scrolling_Frame_4"]:FindFirstChild(SelectedCase)
-
-							CaseButton.Parent = Background["Games_Holder"]["Add_Case_Prompt"]
-
-							task.wait()
-
-							Click(CaseButton)
-
-							task.wait(.1)
-						until LoopAmount == CaseBattlesAmount
-					end
-
-					repeat
-						Click(BattlePrompt["Button_Create"])
-						task.wait(1)
-					until Background["Games_Holder"]["Game_Battles"].Visible == true
-
-					for i,v in pairs(Background["Games_Holder"]["Game_Battles"]["Scrolling_Frame_4"]:GetChildren()) do
-						if v:IsA("Frame") and v["Title_Host"].Text:split(" - ")[2] == Player.Name and not table.find(DoneList, v.Name) then
-							local HolderFrame = Background["Games_Holder"]:FindFirstChild(v.Name)
-							local Player2 = HolderFrame["Player_List"]["Player_2"]["Button_Call"]
-							local Player3 = HolderFrame["Player_List"]["Player_3"]["Button_Call"]
-							table.insert(DoneList, v.Name)
-
-							v.Parent = Background["Games_Holder"]["Game_Battles"]
-
-							task.wait()
-
-							Click(v["Button_View"])
-
-							v.Parent = Background["Games_Holder"]["Game_Battles"]["Scrolling_Frame_4"]
-
-							repeat task.wait() until HolderFrame.Visible == true
-
-							repeat
-								Click(Player2)
-								task.wait(.1)
-							until Player2.Visible == false or HolderFrame.Visible == false
-
-							if HolderFrame["Player_List"]:FindFirstChild("Player_3") then
-								repeat
-									Click(Player3)
-									task.wait(.1)
-								until Player3.Visible == false or HolderFrame.Visible == false
-							end
-
-							repeat
-								Click(Background["Games_Holder"]:FindFirstChild(v.Name)["Button_Games_List"])
-								task.wait(1)
-							until Background["Games_Holder"]["Game_Battles"].Visible == true
-						end
-					end
-				end
-				AutoClickLooping = OriginalAutoClickLooping
-			end
-		})
-	end)
-
-	Player:GetMouse().Button2Down:Connect(function()
-		MouseButton2Looping = true
-		AutoClickLooping = false
-		task.wait(3)
-		AutoClickLooping = OriginalAutoClickLooping
-		MouseButton2Looping = false
-	end)
-
-	Credits(Window)
-elseif game.PlaceId == 10925589760 then -- Merge Simulator
-	local Plot = workspace.Plots:FindFirstChild(Player.Name)
-
-	local AutoTapLooping
-	local AutoMergeLooping
-	local AutoUpgradeLooping
-	local AutoObbyLooping
-	local AutoRebirthLooping
-	local InfObbyMultiLooping
-
-	local OriginalAutoMergeLooping
-
-	local Blocks = {}
-
-	local Window = CreateWindow()
-
-	local Main = Window:MakeTab({
-		Name = "Main",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
-
-	Main:AddToggle({
-		Name = "🖱 Auto Tap",
-		Default = false,
-		Save = true,
-		Flag = "AutoTap",
-		Callback = function(Value)
-			AutoTapLooping = Value
-			while AutoTapLooping and task.wait() do
-				for i,v in pairs(Plot.Blocks:GetChildren()) do
-					game:GetService("ReplicatedStorage").Functions.Tap:FireServer(v)
-					task.wait()
-				end
-			end
-		end
-	})
-
-	Main:AddToggle({
-		Name = "🤝 Auto Merge",
-		Default = false,
-		Save = true,
-		Flag = "AutoMerge",
-		Callback = function(Value)
-			AutoMergeLooping = Value
-			OriginalAutoMergeLooping = Value
-			while AutoMergeLooping and task.wait() do
-				for i,v in pairs(Plot.Blocks:GetChildren()) do
-					v.CFrame = CFrame.new(Plot.Main.Position.X + 10, Plot.Main.Position.Y + 10, Plot.Main.Position.Z + 10)
-				end
-			end
-		end
-	})
-
-	Main:AddToggle({
-		Name = "📈 Auto Buy Upgrades",
-		Default = false,
-		Save = true,
-		Flag = "AutoBuyUpgrades",
-		Callback = function(Value)
-			AutoUpgradeLooping = Value
-			while AutoUpgradeLooping and task.wait() do
-				for i,v in pairs(Player.PlayerGui.World.Upgrades.Main:GetChildren()) do
-					if v:IsA("Frame") then
-						firesignal(v.Buy.Activated)
-					end
-				end
-			end
-		end
-	})
-
-	Main:AddToggle({
-		Name = "🏁 Auto Complete Obby",
-		Default = false,
-		Save = true,
-		Flag = "AutoCompleteObby",
-		Callback = function(Value)
-			AutoObbyLooping = Value
-			while AutoObbyLooping and task.wait() do
-				if game:GetService("Workspace").Obby.Blocker.Transparency == 1 then
-					Player.Character.HumanoidRootPart.CFrame = CFrame.new(267, 81, 4)
-					repeat task.wait() until game:GetService("Workspace").Obby.Blocker.Transparency ~= 1
-				end
-			end
-		end
-	})
-
-	Main:AddToggle({
-		Name = "🔁 Auto Rebirth",
-		Default = false,
-		Save = true,
-		Flag = "AutoRebirth",
-		Callback = function(Value)
-			AutoRebirthLooping = Value
-			while AutoRebirthLooping do
-				game:GetService("ReplicatedStorage").Functions.Rebirth:InvokeServer()
-				task.wait(1)
-			end
-		end
-	})
-
-	Main:AddToggle({
-		Name = "🎉 Infinite Obby Multiplier",
-		Default = false,
-		Save = true,
-		Flag = "InfObbyMulti",
-		Callback = function(Value)
-			InfObbyMultiLooping = Value
-			while InfObbyMultiLooping do
-				firetouchinterest(Player.Character.HumanoidRootPart, workspace.Obby.Finish, 0)
-				firetouchinterest(Player.Character.HumanoidRootPart, workspace.Obby.Finish, 1)
-				task.wait(1)
-			end
-		end
-	})
-
-	Credits(Window)
-elseif game.PlaceId == 9712123877 then -- Super Slime Simulator
-	local CollectLooping
-	local RebirthLooping
-	local ClaimLooping
-	local CapsuleLooping
-	local OpenLooping
-
-	local SelectedCapsule
-
-	local CapsuleList = {"standardCapsule","midCapsule", "epicCapsule", "ufoCapsule", "poisonCapsule", "basicBuffCapsule"}
-
-	local Window = CreateWindow()
-
-	local Main = Window:MakeTab({
-		Name = "Main",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
-
-	Main:AddToggle({
-		Name = "🍃 Auto Collect",
-		Default = false,
-		Save = true,
-		Flag = "AutoCollect",
-		Callback = function(Value)
-			CollectLooping = Value
-			while CollectLooping and task.wait() do
-				for i,v in pairs(game:GetService("Workspace").gardenStage.physicsProps:GetChildren()) do
-					if CollectLooping and Player.Character:FindFirstChild("HumanoidRootPart") and v:IsA("Model") and v:FindFirstChild("destructable") and v.destructable.Value == true and v.destructable:FindFirstChildOfClass("MeshPart") then
-						Player.Character.HumanoidRootPart.CFrame = CFrame.new(v.destructable:FindFirstChildOfClass("MeshPart").Position)
-						task.wait()
-					end
-				end
-			end
-		end
-	})
-
-	Main:AddToggle({
-		Name = "🔁 Auto Rebirth",
-		Default = false,
-		Save = true,
-		Flag = "AutoRebirth",
-		Callback = function(Value)
-			RebirthLooping = Value
-			while RebirthLooping and task.wait(1) do
-				game:GetService("ReplicatedStorage").functions.requestRebirth:FireServer()
-			end
-		end
-	})
-
-	Main:AddToggle({
-		Name = "🎁 Auto Claim Rewards",
-		Default = false,
-		Save = true,
-		Flag = "AutoClaim",
-		Callback = function(Value)
-			ClaimLooping = Value
-			while ClaimLooping and task.wait(1) do
-				for i,v in pairs(Player.playerStats.rewards:GetChildren()) do
-					game:GetService("ReplicatedStorage").functions.claimReward:InvokeServer(v)
-					task.wait()
-				end
-			end
-		end
-	})
-
-	local Capsule = Window:MakeTab({
-		Name = "Capsule",
-		Icon = "rbxassetid://4483345998",
-		PremiumOnly = false
-	})
-
-	Capsule:AddDropdown({
-		Name = "💊 Capsule",
-		Options = CapsuleList,
-		Save = true,
-		Flag = "SelectedCapsule",
-		Callback = function(Value)
-			SelectedCapsule = Value
-		end
-	})
-
-	Capsule:AddToggle({
-		Name = "💵 Auto Buy Capsule",
-		Default = false,
-		Save = true,
-		Flag = "AutoBuyCapsule",
-		Callback = function(Value)
-			CapsuleLooping = Value
-			while CapsuleLooping and task.wait(1) do
-				game:GetService("ReplicatedStorage").functions.buyCapsule:InvokeServer(SelectedCapsule)
-			end
-		end
-	})
-
-	Capsule:AddToggle({
-		Name = "📭 Auto Open Capsule",
-		Default = false,
-		Save = true,
-		Flag = "AutoBuyCapsule",
-		Callback = function(Value)
-			OpenLooping = Value
-			while OpenLooping and task.wait(.25) do
-				Click(Player.PlayerGui.menus.menuHandler.selection)
-			end
-		end
-	})
-
-	Credits(Window)
 end
-
 OrionLib:Init()
