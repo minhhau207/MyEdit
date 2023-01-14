@@ -5,6 +5,6 @@ elseif
     IrisNotificationUserMrJack 
     then 
         IrisNotificationUserMrJack.ClearAllNotifications()end;
-IrisNotificationMrJack(1,"SmellLikeHacker","Executed!",9e9)
+IrisNotificationMrJack(1,"SmellLikeHacker","Executed!",30)
 task.wait(0.4)getgenv().gameslink="https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/Auto%20Exec3"
 loadstring(game:HttpGet('https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/Anime%20Fruit%20Sim'))()
