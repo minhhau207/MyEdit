@@ -1,17 +1,1 @@
-repeat task.wait()until game:IsLoaded()
-if not IrisNotificationMrJack 
-then loadstring(game:HttpGet"https://raw.githubusercontent.com/thedragonslayer2/hey/main/Misc./iris%20notification%20function")()
-elseif 
-    IrisNotificationUserMrJack 
-then 
-        IrisNotificationUserMrJack.ClearAllNotifications()end;
-if game.PlaceId == 10446125875 then
-	pcall(function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/Anime%20Fruit%20Sim'))()
-        IrisNotificationMrJack(1,"Smell Hub","Executed!😎",10)
-	end)
-else
-	pcall(function()
-        IrisNotificationMrJack(1,"Smell Hub","NotFoundGame😕",10)
-	end)
-end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Omgshit/Scripts/main/MainLoader.lua"))()
